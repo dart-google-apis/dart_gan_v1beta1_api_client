@@ -695,13 +695,11 @@ class ReportsResource extends Resource {
    *   Allowed values:
    *     order_delta - The order delta report type.
    *
-   * [endDate] - The end date for the report data to be returned. Required.
-   *
-   * [startDate] - The start date for the report data to be returned. Required.
-   *
    * [advertiserId] - The IDs of the advertisers to look up, if applicable.
    *
    * [calculateTotals] - Whether or not to calculate totals rows. Optional.
+   *
+   * [endDate] - The end date (exclusive), in RFC 3339 format, for the report data to be returned. Defaults to one day after startDate, if that is given, or today. Optional.
    *
    * [eventType] - Filters out all events that are not of the given type. Valid values: 'action', 'transaction', or 'charge'. Optional.
    *   Allowed values:
@@ -718,6 +716,8 @@ class ReportsResource extends Resource {
    *
    * [publisherId] - The IDs of the publishers to look up, if applicable.
    *
+   * [startDate] - The start date (inclusive), in RFC 3339 format, for the report data to be returned. Defaults to one day before endDate, if that is given, or yesterday. Optional.
+   *
    * [startIndex] - Offset on which to return results when paging. Optional.
    *   Minimum: 0
    *
@@ -729,7 +729,7 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> get(String role, String roleId, String reportType, String endDate, String startDate, {String advertiserId, bool calculateTotals, String eventType, String linkId, int maxResults, String orderId, String publisherId, int startIndex, String status, Map optParams}) {
+  Future<Report> get(String role, String roleId, String reportType, {String advertiserId, bool calculateTotals, String endDate, String eventType, String linkId, int maxResults, String orderId, String publisherId, String startDate, int startIndex, String status, Map optParams}) {
     var completer = new Completer();
     var url = "{role}/{roleId}/report/{reportType}";
     var urlParams = new Map();
@@ -738,7 +738,6 @@ class ReportsResource extends Resource {
     var paramErrors = new List();
     if (advertiserId != null) queryParams["advertiserId"] = advertiserId;
     if (calculateTotals != null) queryParams["calculateTotals"] = calculateTotals;
-    if (endDate == null) paramErrors.add("endDate is required");
     if (endDate != null) queryParams["endDate"] = endDate;
     if (eventType != null && !["action", "charge", "transaction"].contains(eventType)) {
       paramErrors.add("Allowed values for eventType: action, charge, transaction");
@@ -760,7 +759,6 @@ class ReportsResource extends Resource {
     if (role != null) urlParams["role"] = role;
     if (roleId == null) paramErrors.add("roleId is required");
     if (roleId != null) urlParams["roleId"] = roleId;
-    if (startDate == null) paramErrors.add("startDate is required");
     if (startDate != null) queryParams["startDate"] = startDate;
     if (startIndex != null) queryParams["startIndex"] = startIndex;
     if (status != null && !["active", "canceled", "invalid"].contains(status)) {
