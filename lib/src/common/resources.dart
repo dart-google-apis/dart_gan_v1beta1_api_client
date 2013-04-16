@@ -19,13 +19,13 @@ class AdvertisersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Advertiser> get(String role, String roleId, {String advertiserId, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Advertiser> get(core.String role, core.String roleId, {core.String advertiserId, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/advertiser";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (advertiserId != null) queryParams["advertiserId"] = advertiserId;
     if (role == null) paramErrors.add("role is required");
     if (role != null && !["advertisers", "publishers"].contains(role)) {
@@ -91,13 +91,13 @@ class AdvertisersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Advertisers> list(String role, String roleId, {String advertiserCategory, int maxResults, num minNinetyDayEpc, int minPayoutRank, num minSevenDayEpc, String pageToken, String relationshipStatus, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Advertisers> list(core.String role, core.String roleId, {core.String advertiserCategory, core.int maxResults, core.num minNinetyDayEpc, core.int minPayoutRank, core.num minSevenDayEpc, core.String pageToken, core.String relationshipStatus, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/advertisers";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (advertiserCategory != null) queryParams["advertiserCategory"] = advertiserCategory;
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (minNinetyDayEpc != null) queryParams["minNinetyDayEpc"] = minNinetyDayEpc;
@@ -156,13 +156,13 @@ class CcOffersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CcOffers> list(String publisher, {String advertiser, String projection, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CcOffers> list(core.String publisher, {core.String advertiser, core.String projection, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "publishers/{publisher}/ccOffers";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (advertiser != null) queryParams["advertiser"] = advertiser;
     if (projection != null && !["full", "summary"].contains(projection)) {
       paramErrors.add("Allowed values for projection: full, summary");
@@ -257,13 +257,13 @@ class EventsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Events> list(String role, String roleId, {String advertiserId, String chargeType, String eventDateMax, String eventDateMin, String linkId, int maxResults, String memberId, String modifyDateMax, String modifyDateMin, String orderId, String pageToken, String productCategory, String publisherId, String sku, String status, String type, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Events> list(core.String role, core.String roleId, {core.String advertiserId, core.String chargeType, core.String eventDateMax, core.String eventDateMin, core.String linkId, core.int maxResults, core.String memberId, core.String modifyDateMax, core.String modifyDateMin, core.String orderId, core.String pageToken, core.String productCategory, core.String publisherId, core.String sku, core.String status, core.String type, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/events";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (advertiserId != null) queryParams["advertiserId"] = advertiserId;
     if (chargeType != null && !["credit", "debit", "monthly_minimum", "other", "slotting_fee", "tier_bonus"].contains(chargeType)) {
       paramErrors.add("Allowed values for chargeType: credit, debit, monthly_minimum, other, slotting_fee, tier_bonus");
@@ -337,13 +337,13 @@ class LinksResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Link> get(String role, String roleId, String linkId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Link> get(core.String role, core.String roleId, core.String linkId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/link/{linkId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (linkId == null) paramErrors.add("linkId is required");
     if (linkId != null) urlParams["linkId"] = linkId;
     if (role == null) paramErrors.add("role is required");
@@ -388,13 +388,13 @@ class LinksResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Link> insert(Link request, String role, String roleId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Link> insert(Link request, core.String role, core.String roleId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/link";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (role == null) paramErrors.add("role is required");
     if (role != null && !["advertisers", "publishers"].contains(role)) {
       paramErrors.add("Allowed values for role: advertisers, publishers");
@@ -478,13 +478,13 @@ class LinksResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Links> list(String role, String roleId, {String advertiserId, String assetSize, String authorship, String createDateMax, String createDateMin, String linkType, int maxResults, String pageToken, String promotionType, String relationshipStatus, String searchText, String startDateMax, String startDateMin, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Links> list(core.String role, core.String roleId, {core.String advertiserId, core.String assetSize, core.String authorship, core.String createDateMax, core.String createDateMin, core.String linkType, core.int maxResults, core.String pageToken, core.String promotionType, core.String relationshipStatus, core.String searchText, core.String startDateMax, core.String startDateMin, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/links";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (advertiserId != null) queryParams["advertiserId"] = advertiserId;
     if (assetSize != null) queryParams["assetSize"] = assetSize;
     if (authorship != null && !["advertiser", "publisher"].contains(authorship)) {
@@ -558,13 +558,13 @@ class PublishersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Publisher> get(String role, String roleId, {String publisherId, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Publisher> get(core.String role, core.String roleId, {core.String publisherId, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/publisher";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (publisherId != null) queryParams["publisherId"] = publisherId;
     if (role == null) paramErrors.add("role is required");
     if (role != null && !["advertisers", "publishers"].contains(role)) {
@@ -630,13 +630,13 @@ class PublishersResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Publishers> list(String role, String roleId, {int maxResults, num minNinetyDayEpc, int minPayoutRank, num minSevenDayEpc, String pageToken, String publisherCategory, String relationshipStatus, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Publishers> list(core.String role, core.String roleId, {core.int maxResults, core.num minNinetyDayEpc, core.int minPayoutRank, core.num minSevenDayEpc, core.String pageToken, core.String publisherCategory, core.String relationshipStatus, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/publishers";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (minNinetyDayEpc != null) queryParams["minNinetyDayEpc"] = minNinetyDayEpc;
     if (minPayoutRank != null) queryParams["minPayoutRank"] = minPayoutRank;
@@ -729,13 +729,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> get(String role, String roleId, String reportType, {String advertiserId, bool calculateTotals, String endDate, String eventType, String linkId, int maxResults, String orderId, String publisherId, String startDate, int startIndex, String status, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> get(core.String role, core.String roleId, core.String reportType, {core.String advertiserId, core.bool calculateTotals, core.String endDate, core.String eventType, core.String linkId, core.int maxResults, core.String orderId, core.String publisherId, core.String startDate, core.int startIndex, core.String status, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{role}/{roleId}/report/{reportType}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (advertiserId != null) queryParams["advertiserId"] = advertiserId;
     if (calculateTotals != null) queryParams["calculateTotals"] = calculateTotals;
     if (endDate != null) queryParams["endDate"] = endDate;

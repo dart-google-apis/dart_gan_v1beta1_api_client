@@ -4,25 +4,25 @@ part of gan_v1beta1_api_client;
 class Advertiser {
 
   /** True if the advertiser allows publisher created links, otherwise false. */
-  bool allowPublisherCreatedLinks;
+  core.bool allowPublisherCreatedLinks;
 
   /** Category that this advertiser belongs to. A valid list of categories can be found here: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&answer=107581 */
-  String category;
+  core.String category;
 
   /** The longest possible length of a commission (how long the cookies on the customer's browser last before they expire). */
-  int commissionDuration;
+  core.int commissionDuration;
 
   /** Email that this advertiser would like publishers to contact them with. */
-  String contactEmail;
+  core.String contactEmail;
 
   /** Phone that this advertiser would like publishers to contact them with. */
-  String contactPhone;
+  core.String contactPhone;
 
   /** The default link id for this advertiser. */
-  String defaultLinkId;
+  core.String defaultLinkId;
 
   /** Description of the website the advertiser advertises from. */
-  String description;
+  core.String description;
 
   /** The sum of fees paid to publishers divided by the total number of clicks over the past three months. This value should be multiplied by 100 at the time of display. */
   Money epcNinetyDayAverage;
@@ -31,43 +31,43 @@ class Advertiser {
   Money epcSevenDayAverage;
 
   /** The ID of this advertiser. */
-  String id;
+  core.String id;
 
   /** The requested advertiser. */
   Advertiser item;
 
   /** Date that this advertiser was approved as a Google Affiliate Network advertiser. */
-  String joinDate;
+  core.String joinDate;
 
   /** The kind for an advertiser. */
-  String kind;
+  core.String kind;
 
   /** URL to the logo this advertiser uses on the Google Affiliate Network. */
-  String logoUrl;
+  core.String logoUrl;
 
   /** List of merchant center ids for this advertiser */
-  List<String> merchantCenterIds;
+  core.List<core.String> merchantCenterIds;
 
   /** The name of this advertiser. */
-  String name;
+  core.String name;
 
   /** A rank based on commissions paid to publishers over the past 90 days. A number between 1 and 4 where 4 means the top quartile (most money paid) and 1 means the bottom quartile (least money paid). */
-  String payoutRank;
+  core.String payoutRank;
 
   /** Allows advertisers to submit product listings to Google Product Search. */
-  bool productFeedsEnabled;
+  core.bool productFeedsEnabled;
 
   /** List of redirect URLs for this advertiser */
-  List<String> redirectDomains;
+  core.List<core.String> redirectDomains;
 
   /** URL of the website this advertiser advertises from. */
-  String siteUrl;
+  core.String siteUrl;
 
   /** The status of the requesting publisher's relationship this advertiser. */
-  String status;
+  core.String status;
 
   /** Create new Advertiser from JSON data */
-  Advertiser.fromJson(Map json) {
+  Advertiser.fromJson(core.Map json) {
     if (json.containsKey("allowPublisherCreatedLinks")) {
       allowPublisherCreatedLinks = json["allowPublisherCreatedLinks"];
     }
@@ -140,8 +140,8 @@ class Advertiser {
   }
 
   /** Create JSON Object for Advertiser */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (allowPublisherCreatedLinks != null) {
       output["allowPublisherCreatedLinks"] = allowPublisherCreatedLinks;
@@ -186,7 +186,7 @@ class Advertiser {
       output["logoUrl"] = logoUrl;
     }
     if (merchantCenterIds != null) {
-      output["merchantCenterIds"] = new List();
+      output["merchantCenterIds"] = new core.List();
       merchantCenterIds.forEach((item) {
         output["merchantCenterIds"].add(item);
       });
@@ -201,7 +201,7 @@ class Advertiser {
       output["productFeedsEnabled"] = productFeedsEnabled;
     }
     if (redirectDomains != null) {
-      output["redirectDomains"] = new List();
+      output["redirectDomains"] = new core.List();
       redirectDomains.forEach((item) {
         output["redirectDomains"].add(item);
       });
@@ -217,23 +217,23 @@ class Advertiser {
   }
 
   /** Return String representation of Advertiser */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Advertisers {
 
   /** The advertiser list. */
-  List<Advertiser> items;
+  core.List<Advertiser> items;
 
   /** The kind for a page of advertisers. */
-  String kind;
+  core.String kind;
 
   /** The 'pageToken' to pass to the next request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new Advertisers from JSON data */
-  Advertisers.fromJson(Map json) {
+  Advertisers.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -249,11 +249,11 @@ class Advertisers {
   }
 
   /** Create JSON Object for Advertisers */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -269,7 +269,7 @@ class Advertisers {
   }
 
   /** Return String representation of Advertisers */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -277,196 +277,196 @@ class Advertisers {
 class CcOffer {
 
   /** More marketing copy about the card's benefits. A summary field. */
-  List<String> additionalCardBenefits;
+  core.List<core.String> additionalCardBenefits;
 
   /** Any extra fees levied on card holders. */
-  String additionalCardHolderFee;
+  core.String additionalCardHolderFee;
 
   /** The youngest a recipient of this card may be. */
-  num ageMinimum;
+  core.num ageMinimum;
 
   /** Text describing the details of the age minimum restriction. */
-  String ageMinimumDetails;
+  core.String ageMinimumDetails;
 
   /** The ongoing annual fee, in dollars. */
-  num annualFee;
+  core.num annualFee;
 
   /** Text describing the annual fee, including any difference for the first year. A summary field. */
-  String annualFeeDisplay;
+  core.String annualFeeDisplay;
 
   /** The largest number of units you may accumulate in a year. */
-  num annualRewardMaximum;
+  core.num annualRewardMaximum;
 
   /** Possible categories for this card, eg "Low Interest" or "Good." A summary field. */
-  List<String> approvedCategories;
+  core.List<core.String> approvedCategories;
 
   /** Text describing the purchase APR. A summary field. */
-  String aprDisplay;
+  core.String aprDisplay;
 
   /** Text describing how the balance is computed. A summary field. */
-  String balanceComputationMethod;
+  core.String balanceComputationMethod;
 
   /** Text describing the terms for balance transfers. A summary field. */
-  String balanceTransferTerms;
+  core.String balanceTransferTerms;
 
   /** For cards with rewards programs, extra circumstances whereby additional rewards may be granted. */
-  List<CcOfferBonusRewards> bonusRewards;
+  core.List<CcOfferBonusRewards> bonusRewards;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String carRentalInsurance;
+  core.String carRentalInsurance;
 
   /** A list of what the issuer thinks are the most important benefits of the card. Usually summarizes the rewards program, if there is one. A summary field. */
-  List<String> cardBenefits;
+  core.List<core.String> cardBenefits;
 
   /** The issuer's name for the card, including any trademark or service mark designators. A summary field. */
-  String cardName;
+  core.String cardName;
 
   /** What kind of credit card this is, for example secured or unsecured. */
-  String cardType;
+  core.String cardType;
 
   /** Text describing the terms for cash advances. A summary field. */
-  String cashAdvanceTerms;
+  core.String cashAdvanceTerms;
 
   /** The high end for credit limits the issuer imposes on recipients of this card. */
-  num creditLimitMax;
+  core.num creditLimitMax;
 
   /** The low end for credit limits the issuer imposes on recipients of this card. */
-  num creditLimitMin;
+  core.num creditLimitMin;
 
   /** Text describing the credit ratings required for recipients of this card, for example "Excellent/Good." A summary field. */
-  String creditRatingDisplay;
+  core.String creditRatingDisplay;
 
   /** Fees for defaulting on your payments. */
-  List<CcOfferDefaultFees> defaultFees;
+  core.List<CcOfferDefaultFees> defaultFees;
 
   /** A notice that, if present, is referenced via an asterisk by many of the other summary fields. If this field is present, it will always start with an asterisk ("*"), and must be prominently displayed with the offer. A summary field. */
-  String disclaimer;
+  core.String disclaimer;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String emergencyInsurance;
+  core.String emergencyInsurance;
 
   /** Whether this card is only available to existing customers of the issuer. */
-  bool existingCustomerOnly;
+  core.bool existingCustomerOnly;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String extendedWarranty;
+  core.String extendedWarranty;
 
   /** The annual fee for the first year, if different from the ongoing fee. Optional. */
-  num firstYearAnnualFee;
+  core.num firstYearAnnualFee;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String flightAccidentInsurance;
+  core.String flightAccidentInsurance;
 
   /** Fee for each transaction involving a foreign currency. */
-  String foreignCurrencyTransactionFee;
+  core.String foreignCurrencyTransactionFee;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String fraudLiability;
+  core.String fraudLiability;
 
   /** Text describing the grace period before finance charges apply. A summary field. */
-  String gracePeriodDisplay;
+  core.String gracePeriodDisplay;
 
   /** The link to the image of the card that is shown on Connect Commerce. A summary field. */
-  String imageUrl;
+  core.String imageUrl;
 
   /** Fee for setting up the card. */
-  String initialSetupAndProcessingFee;
+  core.String initialSetupAndProcessingFee;
 
   /** Text describing the terms for introductory period balance transfers. A summary field. */
-  String introBalanceTransferTerms;
+  core.String introBalanceTransferTerms;
 
   /** Text describing the terms for introductory period cash advances. A summary field. */
-  String introCashAdvanceTerms;
+  core.String introCashAdvanceTerms;
 
   /** Text describing the terms for introductory period purchases. A summary field. */
-  String introPurchaseTerms;
+  core.String introPurchaseTerms;
 
   /** Name of card issuer. A summary field. */
-  String issuer;
+  core.String issuer;
 
   /** The Google Affiliate Network ID of the advertiser making this offer. */
-  String issuerId;
+  core.String issuerId;
 
   /** The generic link to the issuer's site. */
-  String issuerWebsite;
+  core.String issuerWebsite;
 
   /** The kind for one credit card offer. A summary field. */
-  String kind;
+  core.String kind;
 
   /** The link to the issuer's page for this card. A summary field. */
-  String landingPageUrl;
+  core.String landingPageUrl;
 
   /** Text describing how much a late payment will cost, eg "up to $35." A summary field. */
-  String latePaymentFee;
+  core.String latePaymentFee;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String luggageInsurance;
+  core.String luggageInsurance;
 
   /** The highest interest rate the issuer charges on this card. Expressed as an absolute number, not as a percentage. */
-  num maxPurchaseRate;
+  core.num maxPurchaseRate;
 
   /** The lowest interest rate the issuer charges on this card. Expressed as an absolute number, not as a percentage. */
-  num minPurchaseRate;
+  core.num minPurchaseRate;
 
   /** Text describing how much missing the grace period will cost. */
-  String minimumFinanceCharge;
+  core.String minimumFinanceCharge;
 
   /** Which network (eg Visa) the card belongs to. A summary field. */
-  String network;
+  core.String network;
 
   /** This offer's ID. A summary field. */
-  String offerId;
+  core.String offerId;
 
   /** Whether a cash reward program lets you get cash back sooner than end of year or other longish period. */
-  bool offersImmediateCashReward;
+  core.bool offersImmediateCashReward;
 
   /** Fee for exceeding the card's charge limit. */
-  String overLimitFee;
+  core.String overLimitFee;
 
   /** Categories in which the issuer does not wish the card to be displayed. A summary field. */
-  List<String> prohibitedCategories;
+  core.List<core.String> prohibitedCategories;
 
   /** Text describing any additional details for the purchase rate. A summary field. */
-  String purchaseRateAdditionalDetails;
+  core.String purchaseRateAdditionalDetails;
 
   /** Fixed or variable. */
-  String purchaseRateType;
+  core.String purchaseRateType;
 
   /** Text describing the fee for a payment that doesn't clear. A summary field. */
-  String returnedPaymentFee;
+  core.String returnedPaymentFee;
 
   /** The company that redeems the rewards, if different from the issuer. */
-  String rewardPartner;
+  core.String rewardPartner;
 
   /** For cards with rewards programs, the unit of reward. For example, miles, cash back, points. */
-  String rewardUnit;
+  core.String rewardUnit;
 
   /** For cards with rewards programs, detailed rules about how the program works. */
-  List<CcOfferRewards> rewards;
+  core.List<CcOfferRewards> rewards;
 
   /** Whether accumulated rewards ever expire. */
-  bool rewardsExpire;
+  core.bool rewardsExpire;
 
   /** For airline miles rewards, tells whether blackout dates apply to the miles. */
-  bool rewardsHaveBlackoutDates;
+  core.bool rewardsHaveBlackoutDates;
 
   /** Fee for requesting a copy of your statement. */
-  String statementCopyFee;
+  core.String statementCopyFee;
 
   /** The link to ping to register a click on this offer. A summary field. */
-  String trackingUrl;
+  core.String trackingUrl;
 
   /** If you get coverage when you use the card for the given activity, this field describes it. */
-  String travelInsurance;
+  core.String travelInsurance;
 
   /** When variable rates were last updated. */
-  String variableRatesLastUpdated;
+  core.String variableRatesLastUpdated;
 
   /** How often variable rates are updated. */
-  String variableRatesUpdateFrequency;
+  core.String variableRatesUpdateFrequency;
 
   /** Create new CcOffer from JSON data */
-  CcOffer.fromJson(Map json) {
+  CcOffer.fromJson(core.Map json) {
     if (json.containsKey("additionalCardBenefits")) {
       additionalCardBenefits = [];
       json["additionalCardBenefits"].forEach((item) {
@@ -680,11 +680,11 @@ class CcOffer {
   }
 
   /** Create JSON Object for CcOffer */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (additionalCardBenefits != null) {
-      output["additionalCardBenefits"] = new List();
+      output["additionalCardBenefits"] = new core.List();
       additionalCardBenefits.forEach((item) {
         output["additionalCardBenefits"].add(item);
       });
@@ -708,7 +708,7 @@ class CcOffer {
       output["annualRewardMaximum"] = annualRewardMaximum;
     }
     if (approvedCategories != null) {
-      output["approvedCategories"] = new List();
+      output["approvedCategories"] = new core.List();
       approvedCategories.forEach((item) {
         output["approvedCategories"].add(item);
       });
@@ -723,7 +723,7 @@ class CcOffer {
       output["balanceTransferTerms"] = balanceTransferTerms;
     }
     if (bonusRewards != null) {
-      output["bonusRewards"] = new List();
+      output["bonusRewards"] = new core.List();
       bonusRewards.forEach((item) {
         output["bonusRewards"].add(item.toJson());
       });
@@ -732,7 +732,7 @@ class CcOffer {
       output["carRentalInsurance"] = carRentalInsurance;
     }
     if (cardBenefits != null) {
-      output["cardBenefits"] = new List();
+      output["cardBenefits"] = new core.List();
       cardBenefits.forEach((item) {
         output["cardBenefits"].add(item);
       });
@@ -756,7 +756,7 @@ class CcOffer {
       output["creditRatingDisplay"] = creditRatingDisplay;
     }
     if (defaultFees != null) {
-      output["defaultFees"] = new List();
+      output["defaultFees"] = new core.List();
       defaultFees.forEach((item) {
         output["defaultFees"].add(item.toJson());
       });
@@ -846,7 +846,7 @@ class CcOffer {
       output["overLimitFee"] = overLimitFee;
     }
     if (prohibitedCategories != null) {
-      output["prohibitedCategories"] = new List();
+      output["prohibitedCategories"] = new core.List();
       prohibitedCategories.forEach((item) {
         output["prohibitedCategories"].add(item);
       });
@@ -867,7 +867,7 @@ class CcOffer {
       output["rewardUnit"] = rewardUnit;
     }
     if (rewards != null) {
-      output["rewards"] = new List();
+      output["rewards"] = new core.List();
       rewards.forEach((item) {
         output["rewards"].add(item.toJson());
       });
@@ -898,26 +898,26 @@ class CcOffer {
   }
 
   /** Return String representation of CcOffer */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CcOfferDefaultFees {
 
   /** The type of charge, for example Purchases. */
-  String category;
+  core.String category;
 
   /** The highest rate the issuer may charge for defaulting on debt in this category. Expressed as an absolute number, not as a percentage. */
-  num maxRate;
+  core.num maxRate;
 
   /** The lowest rate the issuer may charge for defaulting on debt in this category. Expressed as an absolute number, not as a percentage. */
-  num minRate;
+  core.num minRate;
 
   /** Fixed or variable. */
-  String rateType;
+  core.String rateType;
 
   /** Create new CcOfferDefaultFees from JSON data */
-  CcOfferDefaultFees.fromJson(Map json) {
+  CcOfferDefaultFees.fromJson(core.Map json) {
     if (json.containsKey("category")) {
       category = json["category"];
     }
@@ -933,8 +933,8 @@ class CcOfferDefaultFees {
   }
 
   /** Create JSON Object for CcOfferDefaultFees */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (category != null) {
       output["category"] = category;
@@ -953,20 +953,20 @@ class CcOfferDefaultFees {
   }
 
   /** Return String representation of CcOfferDefaultFees */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CcOfferBonusRewards {
 
   /** How many units of reward will be granted. */
-  num amount;
+  core.num amount;
 
   /** The circumstances under which this rule applies, for example, booking a flight via Orbitz. */
-  String details;
+  core.String details;
 
   /** Create new CcOfferBonusRewards from JSON data */
-  CcOfferBonusRewards.fromJson(Map json) {
+  CcOfferBonusRewards.fromJson(core.Map json) {
     if (json.containsKey("amount")) {
       amount = json["amount"];
     }
@@ -976,8 +976,8 @@ class CcOfferBonusRewards {
   }
 
   /** Create JSON Object for CcOfferBonusRewards */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (amount != null) {
       output["amount"] = amount;
@@ -990,32 +990,32 @@ class CcOfferBonusRewards {
   }
 
   /** Return String representation of CcOfferBonusRewards */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CcOfferRewards {
 
   /** Other limits, for example, if this rule only applies during an introductory period. */
-  String additionalDetails;
+  core.String additionalDetails;
 
   /** The number of units rewarded per purchase dollar. */
-  num amount;
+  core.num amount;
 
   /** The kind of purchases covered by this rule. */
-  String category;
+  core.String category;
 
   /** How long rewards granted by this rule last. */
-  num expirationMonths;
+  core.num expirationMonths;
 
   /** The maximum purchase amount in the given category for this rule to apply. */
-  num maxRewardTier;
+  core.num maxRewardTier;
 
   /** The minimum purchase amount in the given category before this rule applies. */
-  num minRewardTier;
+  core.num minRewardTier;
 
   /** Create new CcOfferRewards from JSON data */
-  CcOfferRewards.fromJson(Map json) {
+  CcOfferRewards.fromJson(core.Map json) {
     if (json.containsKey("additionalDetails")) {
       additionalDetails = json["additionalDetails"];
     }
@@ -1037,8 +1037,8 @@ class CcOfferRewards {
   }
 
   /** Create JSON Object for CcOfferRewards */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (additionalDetails != null) {
       output["additionalDetails"] = additionalDetails;
@@ -1063,20 +1063,20 @@ class CcOfferRewards {
   }
 
   /** Return String representation of CcOfferRewards */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class CcOffers {
 
   /** The credit card offers. */
-  List<CcOffer> items;
+  core.List<CcOffer> items;
 
   /** The kind for a page of credit card offers. */
-  String kind;
+  core.String kind;
 
   /** Create new CcOffers from JSON data */
-  CcOffers.fromJson(Map json) {
+  CcOffers.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -1089,11 +1089,11 @@ class CcOffers {
   }
 
   /** Create JSON Object for CcOffers */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1106,7 +1106,7 @@ class CcOffers {
   }
 
   /** Return String representation of CcOffers */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1114,16 +1114,16 @@ class CcOffers {
 class Event {
 
   /** The ID of advertiser for this event. */
-  String advertiserId;
+  core.String advertiserId;
 
   /** The name of the advertiser for this event. */
-  String advertiserName;
+  core.String advertiserName;
 
   /** The charge ID for this event. Only returned for charge events. */
-  String chargeId;
+  core.String chargeId;
 
   /** Charge type of the event (other|slotting_fee|monthly_minimum|tier_bonus|debit|credit). Only returned for charge events. */
-  String chargeType;
+  core.String chargeType;
 
   /** Amount of money exchanged during the transaction. Only returned for charge and conversion events. */
   Money commissionableSales;
@@ -1132,43 +1132,43 @@ class Event {
   Money earnings;
 
   /** The date-time this event was initiated as a RFC 3339 date-time value. */
-  String eventDate;
+  core.String eventDate;
 
   /** The kind for one event. */
-  String kind;
+  core.String kind;
 
   /** The ID of the member attached to this event. Only returned for conversion events. */
-  String memberId;
+  core.String memberId;
 
   /** The date-time this event was last modified as a RFC 3339 date-time value. */
-  String modifyDate;
+  core.String modifyDate;
 
   /** Fee that the advertiser paid to the Google Affiliate Network. */
   Money networkFee;
 
   /** The order ID for this event. Only returned for conversion events. */
-  String orderId;
+  core.String orderId;
 
   /** Products associated with the event. */
-  List<EventProducts> products;
+  core.List<EventProducts> products;
 
   /** Fee that the advertiser paid to the publisher. */
   Money publisherFee;
 
   /** The ID of the publisher for this event. */
-  String publisherId;
+  core.String publisherId;
 
   /** The name of the publisher for this event. */
-  String publisherName;
+  core.String publisherName;
 
   /** Status of the event (active|canceled). Only returned for charge and conversion events. */
-  String status;
+  core.String status;
 
   /** Type of the event (action|transaction|charge). */
-  String type;
+  core.String type;
 
   /** Create new Event from JSON data */
-  Event.fromJson(Map json) {
+  Event.fromJson(core.Map json) {
     if (json.containsKey("advertiserId")) {
       advertiserId = json["advertiserId"];
     }
@@ -1229,8 +1229,8 @@ class Event {
   }
 
   /** Create JSON Object for Event */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (advertiserId != null) {
       output["advertiserId"] = advertiserId;
@@ -1269,7 +1269,7 @@ class Event {
       output["orderId"] = orderId;
     }
     if (products != null) {
-      output["products"] = new List();
+      output["products"] = new core.List();
       products.forEach((item) {
         output["products"].add(item.toJson());
       });
@@ -1294,17 +1294,17 @@ class Event {
   }
 
   /** Return String representation of Event */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class EventProducts {
 
   /** Id of the category this product belongs to. */
-  String categoryId;
+  core.String categoryId;
 
   /** Name of the category this product belongs to. */
-  String categoryName;
+  core.String categoryName;
 
   /** Amount earned by the publisher on this product. */
   Money earnings;
@@ -1316,19 +1316,19 @@ class EventProducts {
   Money publisherFee;
 
   /** Quantity of this product bought/exchanged. */
-  String quantity;
+  core.String quantity;
 
   /** Sku of this product. */
-  String sku;
+  core.String sku;
 
   /** Sku name of this product. */
-  String skuName;
+  core.String skuName;
 
   /** Price per unit of this product. */
   Money unitPrice;
 
   /** Create new EventProducts from JSON data */
-  EventProducts.fromJson(Map json) {
+  EventProducts.fromJson(core.Map json) {
     if (json.containsKey("categoryId")) {
       categoryId = json["categoryId"];
     }
@@ -1359,8 +1359,8 @@ class EventProducts {
   }
 
   /** Create JSON Object for EventProducts */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (categoryId != null) {
       output["categoryId"] = categoryId;
@@ -1394,23 +1394,23 @@ class EventProducts {
   }
 
   /** Return String representation of EventProducts */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Events {
 
   /** The event list. */
-  List<Event> items;
+  core.List<Event> items;
 
   /** The kind for a page of events. */
-  String kind;
+  core.String kind;
 
   /** The 'pageToken' to pass to the next request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new Events from JSON data */
-  Events.fromJson(Map json) {
+  Events.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -1426,11 +1426,11 @@ class Events {
   }
 
   /** Create JSON Object for Events */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1446,7 +1446,7 @@ class Events {
   }
 
   /** Return String representation of Events */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1454,31 +1454,31 @@ class Events {
 class Link {
 
   /** The advertiser id for the advertiser who owns this link. */
-  String advertiserId;
+  core.String advertiserId;
 
   /** Authorship */
-  String authorship;
+  core.String authorship;
 
   /** Availability. */
-  String availability;
+  core.String availability;
 
   /** Tracking url for clicks. */
-  String clickTrackingUrl;
+  core.String clickTrackingUrl;
 
   /** Date that this link was created. */
-  String createDate;
+  core.String createDate;
 
   /** Description. */
-  String description;
+  core.String description;
 
   /** The destination URL for the link. */
-  String destinationUrl;
+  core.String destinationUrl;
 
   /** Duration */
-  String duration;
+  core.String duration;
 
   /** Date that this link becomes inactive. */
-  String endDate;
+  core.String endDate;
 
   /** The sum of fees paid to publishers divided by the total number of clicks over the past three months on this link. This value should be multiplied by 100 at the time of display. */
   Money epcNinetyDayAverage;
@@ -1487,37 +1487,37 @@ class Link {
   Money epcSevenDayAverage;
 
   /** The ID of this link. */
-  String id;
+  core.String id;
 
   /** image alt text. */
-  String imageAltText;
+  core.String imageAltText;
 
   /** Tracking url for impressions. */
-  String impressionTrackingUrl;
+  core.String impressionTrackingUrl;
 
   /** Flag for if this link is active. */
-  bool isActive;
+  core.bool isActive;
 
   /** The kind for one entity. */
-  String kind;
+  core.String kind;
 
   /** The link type. */
-  String linkType;
+  core.String linkType;
 
   /** The logical name for this link. */
-  String name;
+  core.String name;
 
   /** Promotion Type */
-  String promotionType;
+  core.String promotionType;
 
   /** Special offers on the link. */
   LinkSpecialOffers specialOffers;
 
   /** Date that this link becomes active. */
-  String startDate;
+  core.String startDate;
 
   /** Create new Link from JSON data */
-  Link.fromJson(Map json) {
+  Link.fromJson(core.Map json) {
     if (json.containsKey("advertiserId")) {
       advertiserId = json["advertiserId"];
     }
@@ -1584,8 +1584,8 @@ class Link {
   }
 
   /** Create JSON Object for Link */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (advertiserId != null) {
       output["advertiserId"] = advertiserId;
@@ -1655,7 +1655,7 @@ class Link {
   }
 
   /** Return String representation of Link */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1663,16 +1663,16 @@ class Link {
 class LinkSpecialOffers {
 
   /** Whether there is a free gift */
-  bool freeGift;
+  core.bool freeGift;
 
   /** Whether there is free shipping */
-  bool freeShipping;
+  core.bool freeShipping;
 
   /** Minimum purchase amount for free shipping promotion */
   Money freeShippingMin;
 
   /** Percent off on the purchase */
-  num percentOff;
+  core.num percentOff;
 
   /** Minimum purchase amount for percent off promotion */
   Money percentOffMin;
@@ -1684,10 +1684,10 @@ class LinkSpecialOffers {
   Money priceCutMin;
 
   /** List of promotion code associated with the link */
-  List<String> promotionCodes;
+  core.List<core.String> promotionCodes;
 
   /** Create new LinkSpecialOffers from JSON data */
-  LinkSpecialOffers.fromJson(Map json) {
+  LinkSpecialOffers.fromJson(core.Map json) {
     if (json.containsKey("freeGift")) {
       freeGift = json["freeGift"];
     }
@@ -1718,8 +1718,8 @@ class LinkSpecialOffers {
   }
 
   /** Create JSON Object for LinkSpecialOffers */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (freeGift != null) {
       output["freeGift"] = freeGift;
@@ -1743,7 +1743,7 @@ class LinkSpecialOffers {
       output["priceCutMin"] = priceCutMin.toJson();
     }
     if (promotionCodes != null) {
-      output["promotionCodes"] = new List();
+      output["promotionCodes"] = new core.List();
       promotionCodes.forEach((item) {
         output["promotionCodes"].add(item);
       });
@@ -1753,23 +1753,23 @@ class LinkSpecialOffers {
   }
 
   /** Return String representation of LinkSpecialOffers */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Links {
 
   /** The links. */
-  List<Link> items;
+  core.List<Link> items;
 
   /** The kind for a page of links. */
-  String kind;
+  core.String kind;
 
   /** The next page token. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new Links from JSON data */
-  Links.fromJson(Map json) {
+  Links.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -1785,11 +1785,11 @@ class Links {
   }
 
   /** Create JSON Object for Links */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1805,7 +1805,7 @@ class Links {
   }
 
   /** Return String representation of Links */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1813,13 +1813,13 @@ class Links {
 class Money {
 
   /** The amount of money. */
-  num amount;
+  core.num amount;
 
   /** The 3-letter code of the currency in question. */
-  String currencyCode;
+  core.String currencyCode;
 
   /** Create new Money from JSON data */
-  Money.fromJson(Map json) {
+  Money.fromJson(core.Map json) {
     if (json.containsKey("amount")) {
       amount = json["amount"];
     }
@@ -1829,8 +1829,8 @@ class Money {
   }
 
   /** Create JSON Object for Money */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (amount != null) {
       output["amount"] = amount;
@@ -1843,7 +1843,7 @@ class Money {
   }
 
   /** Return String representation of Money */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1851,7 +1851,7 @@ class Money {
 class Publisher {
 
   /** Classification that this publisher belongs to. See this link for all publisher classifications: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&answer=107625&ctx=cb&src=cb&cbid=-k5fihzthfaik&cbrank=4 */
-  String classification;
+  core.String classification;
 
   /** The sum of fees paid to this publisher divided by the total number of clicks over the past three months. Values are multiplied by 100 for display purposes. */
   Money epcNinetyDayAverage;
@@ -1860,31 +1860,31 @@ class Publisher {
   Money epcSevenDayAverage;
 
   /** The ID of this publisher. */
-  String id;
+  core.String id;
 
   /** The requested publisher. */
   Publisher item;
 
   /** Date that this publisher was approved as a Google Affiliate Network publisher. */
-  String joinDate;
+  core.String joinDate;
 
   /** The kind for a publisher. */
-  String kind;
+  core.String kind;
 
   /** The name of this publisher. */
-  String name;
+  core.String name;
 
   /** A rank based on commissions paid to this publisher over the past 90 days. A number between 1 and 4 where 4 means the top quartile (most money paid) and 1 means the bottom quartile (least money paid). */
-  String payoutRank;
+  core.String payoutRank;
 
   /** Websites that this publisher uses to advertise. */
-  List<String> sites;
+  core.List<core.String> sites;
 
   /** The status of the requesting advertiser's relationship with this publisher. */
-  String status;
+  core.String status;
 
   /** Create new Publisher from JSON data */
-  Publisher.fromJson(Map json) {
+  Publisher.fromJson(core.Map json) {
     if (json.containsKey("classification")) {
       classification = json["classification"];
     }
@@ -1924,8 +1924,8 @@ class Publisher {
   }
 
   /** Create JSON Object for Publisher */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (classification != null) {
       output["classification"] = classification;
@@ -1955,7 +1955,7 @@ class Publisher {
       output["payoutRank"] = payoutRank;
     }
     if (sites != null) {
-      output["sites"] = new List();
+      output["sites"] = new core.List();
       sites.forEach((item) {
         output["sites"].add(item);
       });
@@ -1968,23 +1968,23 @@ class Publisher {
   }
 
   /** Return String representation of Publisher */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Publishers {
 
   /** The entity list. */
-  List<Publisher> items;
+  core.List<Publisher> items;
 
   /** The kind for a page of entities. */
-  String kind;
+  core.String kind;
 
   /** The 'pageToken' to pass to the next request to get the next page, if there are more to retrieve. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new Publishers from JSON data */
-  Publishers.fromJson(Map json) {
+  Publishers.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -2000,11 +2000,11 @@ class Publishers {
   }
 
   /** Create JSON Object for Publishers */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -2020,7 +2020,7 @@ class Publishers {
   }
 
   /** Return String representation of Publishers */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2028,25 +2028,25 @@ class Publishers {
 class Report {
 
   /** The column names for the report */
-  List<String> column_names;
+  core.List<core.String> column_names;
 
   /** The end of the date range for this report, exclusive. */
-  String end_date;
+  core.String end_date;
 
   /** The kind for a report. */
-  String kind;
+  core.String kind;
 
   /** The number of matching rows before paging is applied. */
-  String matching_row_count;
+  core.String matching_row_count;
 
   /** The start of the date range for this report, inclusive. */
-  String start_date;
+  core.String start_date;
 
   /** The report type. */
-  String type;
+  core.String type;
 
   /** Create new Report from JSON data */
-  Report.fromJson(Map json) {
+  Report.fromJson(core.Map json) {
     if (json.containsKey("column_names")) {
       column_names = [];
       json["column_names"].forEach((item) {
@@ -2071,11 +2071,11 @@ class Report {
   }
 
   /** Create JSON Object for Report */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (column_names != null) {
-      output["column_names"] = new List();
+      output["column_names"] = new core.List();
       column_names.forEach((item) {
         output["column_names"].add(item);
       });
@@ -2100,7 +2100,7 @@ class Report {
   }
 
   /** Return String representation of Report */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
