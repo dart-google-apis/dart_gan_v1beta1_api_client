@@ -4,18 +4,18 @@ part of gan_v1beta1_api_console;
 /** Lets you have programmatic access to your Google Affiliate Network data. */
 class Gan extends ConsoleClient {
 
-  AdvertisersResource _advertisers;
-  AdvertisersResource get advertisers => _advertisers;
-  CcOffersResource _ccOffers;
-  CcOffersResource get ccOffers => _ccOffers;
-  EventsResource _events;
-  EventsResource get events => _events;
-  LinksResource _links;
-  LinksResource get links => _links;
-  PublishersResource _publishers;
-  PublishersResource get publishers => _publishers;
-  ReportsResource _reports;
-  ReportsResource get reports => _reports;
+  AdvertisersResource_ _advertisers;
+  AdvertisersResource_ get advertisers => _advertisers;
+  CcOffersResource_ _ccOffers;
+  CcOffersResource_ get ccOffers => _ccOffers;
+  EventsResource_ _events;
+  EventsResource_ get events => _events;
+  LinksResource_ _links;
+  LinksResource_ get links => _links;
+  PublishersResource_ _publishers;
+  PublishersResource_ get publishers => _publishers;
+  ReportsResource_ _reports;
+  ReportsResource_ get reports => _reports;
 
   /** OAuth Scope2: Manage your GAN data */
   static const core.String GAN_SCOPE = "https://www.googleapis.com/auth/gan";
@@ -75,11 +75,11 @@ class Gan extends ConsoleClient {
   Gan([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/gan/v1beta1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _advertisers = new AdvertisersResource(this);
-    _ccOffers = new CcOffersResource(this);
-    _events = new EventsResource(this);
-    _links = new LinksResource(this);
-    _publishers = new PublishersResource(this);
-    _reports = new ReportsResource(this);
+    _advertisers = new AdvertisersResource_(this);
+    _ccOffers = new CcOffersResource_(this);
+    _events = new EventsResource_(this);
+    _links = new LinksResource_(this);
+    _publishers = new PublishersResource_(this);
+    _reports = new ReportsResource_(this);
   }
 }

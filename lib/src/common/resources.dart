@@ -1,8 +1,8 @@
 part of gan_v1beta1_api_client;
 
-class AdvertisersResource extends Resource {
+class AdvertisersResource_ extends Resource {
 
-  AdvertisersResource(Client client) : super(client) {
+  AdvertisersResource_(Client client) : super(client) {
   }
 
   /**
@@ -43,7 +43,7 @@ class AdvertisersResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -124,7 +124,7 @@ class AdvertisersResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -137,9 +137,9 @@ class AdvertisersResource extends Resource {
   }
 }
 
-class CcOffersResource extends Resource {
+class CcOffersResource_ extends Resource {
 
-  CcOffersResource(Client client) : super(client) {
+  CcOffersResource_(Client client) : super(client) {
   }
 
   /**
@@ -179,7 +179,7 @@ class CcOffersResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -192,9 +192,9 @@ class CcOffersResource extends Resource {
   }
 }
 
-class EventsResource extends Resource {
+class EventsResource_ extends Resource {
 
-  EventsResource(Client client) : super(client) {
+  EventsResource_(Client client) : super(client) {
   }
 
   /**
@@ -305,7 +305,7 @@ class EventsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -318,9 +318,9 @@ class EventsResource extends Resource {
   }
 }
 
-class LinksResource extends Resource {
+class LinksResource_ extends Resource {
 
-  LinksResource(Client client) : super(client) {
+  LinksResource_(Client client) : super(client) {
   }
 
   /**
@@ -362,7 +362,7 @@ class LinksResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -411,7 +411,7 @@ class LinksResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -526,7 +526,7 @@ class LinksResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -539,9 +539,9 @@ class LinksResource extends Resource {
   }
 }
 
-class PublishersResource extends Resource {
+class PublishersResource_ extends Resource {
 
-  PublishersResource(Client client) : super(client) {
+  PublishersResource_(Client client) : super(client) {
   }
 
   /**
@@ -582,7 +582,7 @@ class PublishersResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -663,7 +663,7 @@ class PublishersResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -676,9 +676,9 @@ class PublishersResource extends Resource {
   }
 }
 
-class ReportsResource extends Resource {
+class ReportsResource_ extends Resource {
 
-  ReportsResource(Client client) : super(client) {
+  ReportsResource_(Client client) : super(client) {
   }
 
   /**
@@ -774,7 +774,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
