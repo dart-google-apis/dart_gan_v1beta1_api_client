@@ -337,7 +337,7 @@ class LinksResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Link> get(core.String role, core.String roleId, core.String linkId, {core.Map optParams}) {
+  async.Future<Link> get(core.String role, core.String roleId, core.int linkId, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "{role}/{roleId}/link/{linkId}";
     var urlParams = new core.Map();
@@ -478,7 +478,7 @@ class LinksResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Links> list(core.String role, core.String roleId, {core.String advertiserId, core.String assetSize, core.String authorship, core.String createDateMax, core.String createDateMin, core.String linkType, core.int maxResults, core.String pageToken, core.String promotionType, core.String relationshipStatus, core.String searchText, core.String startDateMax, core.String startDateMin, core.Map optParams}) {
+  async.Future<Links> list(core.String role, core.String roleId, {core.int advertiserId, core.String assetSize, core.String authorship, core.String createDateMax, core.String createDateMin, core.String linkType, core.int maxResults, core.String pageToken, core.String promotionType, core.String relationshipStatus, core.String searchText, core.String startDateMax, core.String startDateMin, core.Map optParams}) {
     var completer = new async.Completer();
     var url = "{role}/{roleId}/links";
     var urlParams = new core.Map();

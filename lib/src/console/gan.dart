@@ -74,7 +74,7 @@ class Gan extends ConsoleClient {
 
   Gan([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/gan/v1beta1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _advertisers = new AdvertisersResource_(this);
     _ccOffers = new CcOffersResource_(this);
     _events = new EventsResource_(this);

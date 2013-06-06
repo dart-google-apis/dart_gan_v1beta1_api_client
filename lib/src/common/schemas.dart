@@ -19,7 +19,7 @@ class Advertiser {
   core.String contactPhone;
 
   /** The default link id for this advertiser. */
-  core.String defaultLinkId;
+  core.int defaultLinkId;
 
   /** Description of the website the advertiser advertises from. */
   core.String description;
@@ -31,7 +31,7 @@ class Advertiser {
   Money epcSevenDayAverage;
 
   /** The ID of this advertiser. */
-  core.String id;
+  core.int id;
 
   /** The requested advertiser. */
   Advertiser item;
@@ -46,7 +46,7 @@ class Advertiser {
   core.String logoUrl;
 
   /** List of merchant center ids for this advertiser */
-  core.List<core.String> merchantCenterIds;
+  core.List<core.int> merchantCenterIds;
 
   /** The name of this advertiser. */
   core.String name;
@@ -1114,7 +1114,7 @@ class CcOffers {
 class Event {
 
   /** The ID of advertiser for this event. */
-  core.String advertiserId;
+  core.int advertiserId;
 
   /** The name of the advertiser for this event. */
   core.String advertiserName;
@@ -1156,7 +1156,7 @@ class Event {
   Money publisherFee;
 
   /** The ID of the publisher for this event. */
-  core.String publisherId;
+  core.int publisherId;
 
   /** The name of the publisher for this event. */
   core.String publisherName;
@@ -1316,7 +1316,7 @@ class EventProducts {
   Money publisherFee;
 
   /** Quantity of this product bought/exchanged. */
-  core.String quantity;
+  core.int quantity;
 
   /** Sku of this product. */
   core.String sku;
@@ -1454,7 +1454,7 @@ class Events {
 class Link {
 
   /** The advertiser id for the advertiser who owns this link. */
-  core.String advertiserId;
+  core.int advertiserId;
 
   /** Authorship */
   core.String authorship;
@@ -1487,7 +1487,7 @@ class Link {
   Money epcSevenDayAverage;
 
   /** The ID of this link. */
-  core.String id;
+  core.int id;
 
   /** image alt text. */
   core.String imageAltText;
@@ -1860,7 +1860,7 @@ class Publisher {
   Money epcSevenDayAverage;
 
   /** The ID of this publisher. */
-  core.String id;
+  core.int id;
 
   /** The requested publisher. */
   Publisher item;
@@ -2037,7 +2037,7 @@ class Report {
   core.String kind;
 
   /** The number of matching rows before paging is applied. */
-  core.String matching_row_count;
+  core.int matching_row_count;
 
   /** The start of the date range for this report, inclusive. */
   core.String start_date;
