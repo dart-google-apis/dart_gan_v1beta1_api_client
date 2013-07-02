@@ -20,7 +20,6 @@ class AdvertisersResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Advertiser> get(core.String role, core.String roleId, {core.String advertiserId, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/advertiser";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -43,16 +42,13 @@ class AdvertisersResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Advertiser.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Advertiser.fromJson(data));
   }
 
   /**
@@ -92,7 +88,6 @@ class AdvertisersResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Advertisers> list(core.String role, core.String roleId, {core.String advertiserCategory, core.int maxResults, core.num minNinetyDayEpc, core.int minPayoutRank, core.num minSevenDayEpc, core.String pageToken, core.String relationshipStatus, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/advertisers";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -124,16 +119,13 @@ class AdvertisersResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Advertisers.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Advertisers.fromJson(data));
   }
 }
 
@@ -157,7 +149,6 @@ class CcOffersResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CcOffers> list(core.String publisher, {core.String advertiser, core.String projection, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "publishers/{publisher}/ccOffers";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -179,16 +170,13 @@ class CcOffersResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CcOffers.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CcOffers.fromJson(data));
   }
 }
 
@@ -258,7 +246,6 @@ class EventsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Events> list(core.String role, core.String roleId, {core.String advertiserId, core.String chargeType, core.String eventDateMax, core.String eventDateMin, core.String linkId, core.int maxResults, core.String memberId, core.String modifyDateMax, core.String modifyDateMin, core.String orderId, core.String pageToken, core.String productCategory, core.String publisherId, core.String sku, core.String status, core.String type, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/events";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -305,16 +292,13 @@ class EventsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Events.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Events.fromJson(data));
   }
 }
 
@@ -338,7 +322,6 @@ class LinksResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Link> get(core.String role, core.String roleId, core.int linkId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/link/{linkId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -362,16 +345,13 @@ class LinksResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Link.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Link.fromJson(data));
   }
 
   /**
@@ -389,7 +369,6 @@ class LinksResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Link> insert(Link request, core.String role, core.String roleId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/link";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -411,16 +390,13 @@ class LinksResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Link.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Link.fromJson(data));
   }
 
   /**
@@ -479,7 +455,6 @@ class LinksResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Links> list(core.String role, core.String roleId, {core.int advertiserId, core.String assetSize, core.String authorship, core.String createDateMax, core.String createDateMin, core.String linkType, core.int maxResults, core.String pageToken, core.String promotionType, core.String relationshipStatus, core.String searchText, core.String startDateMax, core.String startDateMin, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/links";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -526,16 +501,13 @@ class LinksResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Links.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Links.fromJson(data));
   }
 }
 
@@ -559,7 +531,6 @@ class PublishersResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Publisher> get(core.String role, core.String roleId, {core.String publisherId, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/publisher";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -582,16 +553,13 @@ class PublishersResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Publisher.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Publisher.fromJson(data));
   }
 
   /**
@@ -631,7 +599,6 @@ class PublishersResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Publishers> list(core.String role, core.String roleId, {core.int maxResults, core.num minNinetyDayEpc, core.int minPayoutRank, core.num minSevenDayEpc, core.String pageToken, core.String publisherCategory, core.String relationshipStatus, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/publishers";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -663,16 +630,13 @@ class PublishersResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Publishers.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Publishers.fromJson(data));
   }
 }
 
@@ -730,7 +694,6 @@ class ReportsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Report> get(core.String role, core.String roleId, core.String reportType, {core.String advertiserId, core.bool calculateTotals, core.String endDate, core.String eventType, core.String linkId, core.int maxResults, core.String orderId, core.String publisherId, core.String startDate, core.int startIndex, core.String status, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{role}/{roleId}/report/{reportType}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -774,16 +737,13 @@ class ReportsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Report.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Report.fromJson(data));
   }
 }
 

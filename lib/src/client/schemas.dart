@@ -84,7 +84,11 @@ class Advertiser {
       contactPhone = json["contactPhone"];
     }
     if (json.containsKey("defaultLinkId")) {
-      defaultLinkId = json["defaultLinkId"];
+      if(json["defaultLinkId"] is core.String){
+        defaultLinkId = core.int.parse(json["defaultLinkId"]);
+      }else{
+        defaultLinkId = json["defaultLinkId"];
+      }
     }
     if (json.containsKey("description")) {
       description = json["description"];
@@ -96,7 +100,11 @@ class Advertiser {
       epcSevenDayAverage = new Money.fromJson(json["epcSevenDayAverage"]);
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("item")) {
       item = new Advertiser.fromJson(json["item"]);
@@ -1170,7 +1178,11 @@ class Event {
   /** Create new Event from JSON data */
   Event.fromJson(core.Map json) {
     if (json.containsKey("advertiserId")) {
-      advertiserId = json["advertiserId"];
+      if(json["advertiserId"] is core.String){
+        advertiserId = core.int.parse(json["advertiserId"]);
+      }else{
+        advertiserId = json["advertiserId"];
+      }
     }
     if (json.containsKey("advertiserName")) {
       advertiserName = json["advertiserName"];
@@ -1215,7 +1227,11 @@ class Event {
       publisherFee = new Money.fromJson(json["publisherFee"]);
     }
     if (json.containsKey("publisherId")) {
-      publisherId = json["publisherId"];
+      if(json["publisherId"] is core.String){
+        publisherId = core.int.parse(json["publisherId"]);
+      }else{
+        publisherId = json["publisherId"];
+      }
     }
     if (json.containsKey("publisherName")) {
       publisherName = json["publisherName"];
@@ -1345,7 +1361,11 @@ class EventProducts {
       publisherFee = new Money.fromJson(json["publisherFee"]);
     }
     if (json.containsKey("quantity")) {
-      quantity = json["quantity"];
+      if(json["quantity"] is core.String){
+        quantity = core.int.parse(json["quantity"]);
+      }else{
+        quantity = json["quantity"];
+      }
     }
     if (json.containsKey("sku")) {
       sku = json["sku"];
@@ -1519,7 +1539,11 @@ class Link {
   /** Create new Link from JSON data */
   Link.fromJson(core.Map json) {
     if (json.containsKey("advertiserId")) {
-      advertiserId = json["advertiserId"];
+      if(json["advertiserId"] is core.String){
+        advertiserId = core.int.parse(json["advertiserId"]);
+      }else{
+        advertiserId = json["advertiserId"];
+      }
     }
     if (json.containsKey("authorship")) {
       authorship = json["authorship"];
@@ -1552,7 +1576,11 @@ class Link {
       epcSevenDayAverage = new Money.fromJson(json["epcSevenDayAverage"]);
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("imageAltText")) {
       imageAltText = json["imageAltText"];
@@ -1895,7 +1923,11 @@ class Publisher {
       epcSevenDayAverage = new Money.fromJson(json["epcSevenDayAverage"]);
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("item")) {
       item = new Publisher.fromJson(json["item"]);
@@ -2060,7 +2092,11 @@ class Report {
       kind = json["kind"];
     }
     if (json.containsKey("matching_row_count")) {
-      matching_row_count = json["matching_row_count"];
+      if(json["matching_row_count"] is core.String){
+        matching_row_count = core.int.parse(json["matching_row_count"]);
+      }else{
+        matching_row_count = json["matching_row_count"];
+      }
     }
     if (json.containsKey("start_date")) {
       start_date = json["start_date"];
