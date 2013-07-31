@@ -1,4 +1,4 @@
-part of gan_v1beta1_api_client;
+part of gan_v1beta1_api;
 
 /** An AdvertiserResource. */
 class Advertiser {
@@ -84,11 +84,7 @@ class Advertiser {
       contactPhone = json["contactPhone"];
     }
     if (json.containsKey("defaultLinkId")) {
-      if(json["defaultLinkId"] is core.String){
-        defaultLinkId = core.int.parse(json["defaultLinkId"]);
-      }else{
-        defaultLinkId = json["defaultLinkId"];
-      }
+      defaultLinkId = (json["defaultLinkId"] is core.String) ? core.int.parse(json["defaultLinkId"]) : json["defaultLinkId"];
     }
     if (json.containsKey("description")) {
       description = json["description"];
@@ -100,11 +96,7 @@ class Advertiser {
       epcSevenDayAverage = new Money.fromJson(json["epcSevenDayAverage"]);
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("item")) {
       item = new Advertiser.fromJson(json["item"]);
@@ -119,10 +111,7 @@ class Advertiser {
       logoUrl = json["logoUrl"];
     }
     if (json.containsKey("merchantCenterIds")) {
-      merchantCenterIds = [];
-      json["merchantCenterIds"].forEach((item) {
-        merchantCenterIds.add(item);
-      });
+      merchantCenterIds = json["merchantCenterIds"].map((merchantCenterIdsItem) => (merchantCenterIdsItem is core.String) ? core.int.parse(merchantCenterIdsItem) : merchantCenterIdsItem).toList();
     }
     if (json.containsKey("name")) {
       name = json["name"];
@@ -134,10 +123,7 @@ class Advertiser {
       productFeedsEnabled = json["productFeedsEnabled"];
     }
     if (json.containsKey("redirectDomains")) {
-      redirectDomains = [];
-      json["redirectDomains"].forEach((item) {
-        redirectDomains.add(item);
-      });
+      redirectDomains = json["redirectDomains"].toList();
     }
     if (json.containsKey("siteUrl")) {
       siteUrl = json["siteUrl"];
@@ -194,10 +180,7 @@ class Advertiser {
       output["logoUrl"] = logoUrl;
     }
     if (merchantCenterIds != null) {
-      output["merchantCenterIds"] = new core.List();
-      merchantCenterIds.forEach((item) {
-        output["merchantCenterIds"].add(item);
-      });
+      output["merchantCenterIds"] = merchantCenterIds.toList();
     }
     if (name != null) {
       output["name"] = name;
@@ -209,10 +192,7 @@ class Advertiser {
       output["productFeedsEnabled"] = productFeedsEnabled;
     }
     if (redirectDomains != null) {
-      output["redirectDomains"] = new core.List();
-      redirectDomains.forEach((item) {
-        output["redirectDomains"].add(item);
-      });
+      output["redirectDomains"] = redirectDomains.toList();
     }
     if (siteUrl != null) {
       output["siteUrl"] = siteUrl;
@@ -243,10 +223,7 @@ class Advertisers {
   /** Create new Advertisers from JSON data */
   Advertisers.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Advertiser.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Advertiser.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -261,10 +238,7 @@ class Advertisers {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -476,10 +450,7 @@ class CcOffer {
   /** Create new CcOffer from JSON data */
   CcOffer.fromJson(core.Map json) {
     if (json.containsKey("additionalCardBenefits")) {
-      additionalCardBenefits = [];
-      json["additionalCardBenefits"].forEach((item) {
-        additionalCardBenefits.add(item);
-      });
+      additionalCardBenefits = json["additionalCardBenefits"].toList();
     }
     if (json.containsKey("additionalCardHolderFee")) {
       additionalCardHolderFee = json["additionalCardHolderFee"];
@@ -500,10 +471,7 @@ class CcOffer {
       annualRewardMaximum = json["annualRewardMaximum"];
     }
     if (json.containsKey("approvedCategories")) {
-      approvedCategories = [];
-      json["approvedCategories"].forEach((item) {
-        approvedCategories.add(item);
-      });
+      approvedCategories = json["approvedCategories"].toList();
     }
     if (json.containsKey("aprDisplay")) {
       aprDisplay = json["aprDisplay"];
@@ -515,19 +483,13 @@ class CcOffer {
       balanceTransferTerms = json["balanceTransferTerms"];
     }
     if (json.containsKey("bonusRewards")) {
-      bonusRewards = [];
-      json["bonusRewards"].forEach((item) {
-        bonusRewards.add(new CcOfferBonusRewards.fromJson(item));
-      });
+      bonusRewards = json["bonusRewards"].map((bonusRewardsItem) => new CcOfferBonusRewards.fromJson(bonusRewardsItem)).toList();
     }
     if (json.containsKey("carRentalInsurance")) {
       carRentalInsurance = json["carRentalInsurance"];
     }
     if (json.containsKey("cardBenefits")) {
-      cardBenefits = [];
-      json["cardBenefits"].forEach((item) {
-        cardBenefits.add(item);
-      });
+      cardBenefits = json["cardBenefits"].toList();
     }
     if (json.containsKey("cardName")) {
       cardName = json["cardName"];
@@ -548,10 +510,7 @@ class CcOffer {
       creditRatingDisplay = json["creditRatingDisplay"];
     }
     if (json.containsKey("defaultFees")) {
-      defaultFees = [];
-      json["defaultFees"].forEach((item) {
-        defaultFees.add(new CcOfferDefaultFees.fromJson(item));
-      });
+      defaultFees = json["defaultFees"].map((defaultFeesItem) => new CcOfferDefaultFees.fromJson(defaultFeesItem)).toList();
     }
     if (json.containsKey("disclaimer")) {
       disclaimer = json["disclaimer"];
@@ -638,10 +597,7 @@ class CcOffer {
       overLimitFee = json["overLimitFee"];
     }
     if (json.containsKey("prohibitedCategories")) {
-      prohibitedCategories = [];
-      json["prohibitedCategories"].forEach((item) {
-        prohibitedCategories.add(item);
-      });
+      prohibitedCategories = json["prohibitedCategories"].toList();
     }
     if (json.containsKey("purchaseRateAdditionalDetails")) {
       purchaseRateAdditionalDetails = json["purchaseRateAdditionalDetails"];
@@ -659,10 +615,7 @@ class CcOffer {
       rewardUnit = json["rewardUnit"];
     }
     if (json.containsKey("rewards")) {
-      rewards = [];
-      json["rewards"].forEach((item) {
-        rewards.add(new CcOfferRewards.fromJson(item));
-      });
+      rewards = json["rewards"].map((rewardsItem) => new CcOfferRewards.fromJson(rewardsItem)).toList();
     }
     if (json.containsKey("rewardsExpire")) {
       rewardsExpire = json["rewardsExpire"];
@@ -692,10 +645,7 @@ class CcOffer {
     var output = new core.Map();
 
     if (additionalCardBenefits != null) {
-      output["additionalCardBenefits"] = new core.List();
-      additionalCardBenefits.forEach((item) {
-        output["additionalCardBenefits"].add(item);
-      });
+      output["additionalCardBenefits"] = additionalCardBenefits.toList();
     }
     if (additionalCardHolderFee != null) {
       output["additionalCardHolderFee"] = additionalCardHolderFee;
@@ -716,10 +666,7 @@ class CcOffer {
       output["annualRewardMaximum"] = annualRewardMaximum;
     }
     if (approvedCategories != null) {
-      output["approvedCategories"] = new core.List();
-      approvedCategories.forEach((item) {
-        output["approvedCategories"].add(item);
-      });
+      output["approvedCategories"] = approvedCategories.toList();
     }
     if (aprDisplay != null) {
       output["aprDisplay"] = aprDisplay;
@@ -731,19 +678,13 @@ class CcOffer {
       output["balanceTransferTerms"] = balanceTransferTerms;
     }
     if (bonusRewards != null) {
-      output["bonusRewards"] = new core.List();
-      bonusRewards.forEach((item) {
-        output["bonusRewards"].add(item.toJson());
-      });
+      output["bonusRewards"] = bonusRewards.map((bonusRewardsItem) => bonusRewardsItem.toJson()).toList();
     }
     if (carRentalInsurance != null) {
       output["carRentalInsurance"] = carRentalInsurance;
     }
     if (cardBenefits != null) {
-      output["cardBenefits"] = new core.List();
-      cardBenefits.forEach((item) {
-        output["cardBenefits"].add(item);
-      });
+      output["cardBenefits"] = cardBenefits.toList();
     }
     if (cardName != null) {
       output["cardName"] = cardName;
@@ -764,10 +705,7 @@ class CcOffer {
       output["creditRatingDisplay"] = creditRatingDisplay;
     }
     if (defaultFees != null) {
-      output["defaultFees"] = new core.List();
-      defaultFees.forEach((item) {
-        output["defaultFees"].add(item.toJson());
-      });
+      output["defaultFees"] = defaultFees.map((defaultFeesItem) => defaultFeesItem.toJson()).toList();
     }
     if (disclaimer != null) {
       output["disclaimer"] = disclaimer;
@@ -854,10 +792,7 @@ class CcOffer {
       output["overLimitFee"] = overLimitFee;
     }
     if (prohibitedCategories != null) {
-      output["prohibitedCategories"] = new core.List();
-      prohibitedCategories.forEach((item) {
-        output["prohibitedCategories"].add(item);
-      });
+      output["prohibitedCategories"] = prohibitedCategories.toList();
     }
     if (purchaseRateAdditionalDetails != null) {
       output["purchaseRateAdditionalDetails"] = purchaseRateAdditionalDetails;
@@ -875,10 +810,7 @@ class CcOffer {
       output["rewardUnit"] = rewardUnit;
     }
     if (rewards != null) {
-      output["rewards"] = new core.List();
-      rewards.forEach((item) {
-        output["rewards"].add(item.toJson());
-      });
+      output["rewards"] = rewards.map((rewardsItem) => rewardsItem.toJson()).toList();
     }
     if (rewardsExpire != null) {
       output["rewardsExpire"] = rewardsExpire;
@@ -906,6 +838,43 @@ class CcOffer {
   }
 
   /** Return String representation of CcOffer */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class CcOfferBonusRewards {
+
+  /** How many units of reward will be granted. */
+  core.num amount;
+
+  /** The circumstances under which this rule applies, for example, booking a flight via Orbitz. */
+  core.String details;
+
+  /** Create new CcOfferBonusRewards from JSON data */
+  CcOfferBonusRewards.fromJson(core.Map json) {
+    if (json.containsKey("amount")) {
+      amount = json["amount"];
+    }
+    if (json.containsKey("details")) {
+      details = json["details"];
+    }
+  }
+
+  /** Create JSON Object for CcOfferBonusRewards */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (amount != null) {
+      output["amount"] = amount;
+    }
+    if (details != null) {
+      output["details"] = details;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of CcOfferBonusRewards */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -961,43 +930,6 @@ class CcOfferDefaultFees {
   }
 
   /** Return String representation of CcOfferDefaultFees */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-class CcOfferBonusRewards {
-
-  /** How many units of reward will be granted. */
-  core.num amount;
-
-  /** The circumstances under which this rule applies, for example, booking a flight via Orbitz. */
-  core.String details;
-
-  /** Create new CcOfferBonusRewards from JSON data */
-  CcOfferBonusRewards.fromJson(core.Map json) {
-    if (json.containsKey("amount")) {
-      amount = json["amount"];
-    }
-    if (json.containsKey("details")) {
-      details = json["details"];
-    }
-  }
-
-  /** Create JSON Object for CcOfferBonusRewards */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (amount != null) {
-      output["amount"] = amount;
-    }
-    if (details != null) {
-      output["details"] = details;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of CcOfferBonusRewards */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -1086,10 +1018,7 @@ class CcOffers {
   /** Create new CcOffers from JSON data */
   CcOffers.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new CcOffer.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new CcOffer.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1101,10 +1030,7 @@ class CcOffers {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1178,11 +1104,7 @@ class Event {
   /** Create new Event from JSON data */
   Event.fromJson(core.Map json) {
     if (json.containsKey("advertiserId")) {
-      if(json["advertiserId"] is core.String){
-        advertiserId = core.int.parse(json["advertiserId"]);
-      }else{
-        advertiserId = json["advertiserId"];
-      }
+      advertiserId = (json["advertiserId"] is core.String) ? core.int.parse(json["advertiserId"]) : json["advertiserId"];
     }
     if (json.containsKey("advertiserName")) {
       advertiserName = json["advertiserName"];
@@ -1218,20 +1140,13 @@ class Event {
       orderId = json["orderId"];
     }
     if (json.containsKey("products")) {
-      products = [];
-      json["products"].forEach((item) {
-        products.add(new EventProducts.fromJson(item));
-      });
+      products = json["products"].map((productsItem) => new EventProducts.fromJson(productsItem)).toList();
     }
     if (json.containsKey("publisherFee")) {
       publisherFee = new Money.fromJson(json["publisherFee"]);
     }
     if (json.containsKey("publisherId")) {
-      if(json["publisherId"] is core.String){
-        publisherId = core.int.parse(json["publisherId"]);
-      }else{
-        publisherId = json["publisherId"];
-      }
+      publisherId = (json["publisherId"] is core.String) ? core.int.parse(json["publisherId"]) : json["publisherId"];
     }
     if (json.containsKey("publisherName")) {
       publisherName = json["publisherName"];
@@ -1285,10 +1200,7 @@ class Event {
       output["orderId"] = orderId;
     }
     if (products != null) {
-      output["products"] = new core.List();
-      products.forEach((item) {
-        output["products"].add(item.toJson());
-      });
+      output["products"] = products.map((productsItem) => productsItem.toJson()).toList();
     }
     if (publisherFee != null) {
       output["publisherFee"] = publisherFee.toJson();
@@ -1361,11 +1273,7 @@ class EventProducts {
       publisherFee = new Money.fromJson(json["publisherFee"]);
     }
     if (json.containsKey("quantity")) {
-      if(json["quantity"] is core.String){
-        quantity = core.int.parse(json["quantity"]);
-      }else{
-        quantity = json["quantity"];
-      }
+      quantity = (json["quantity"] is core.String) ? core.int.parse(json["quantity"]) : json["quantity"];
     }
     if (json.containsKey("sku")) {
       sku = json["sku"];
@@ -1432,10 +1340,7 @@ class Events {
   /** Create new Events from JSON data */
   Events.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Event.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Event.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1450,10 +1355,7 @@ class Events {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1539,11 +1441,7 @@ class Link {
   /** Create new Link from JSON data */
   Link.fromJson(core.Map json) {
     if (json.containsKey("advertiserId")) {
-      if(json["advertiserId"] is core.String){
-        advertiserId = core.int.parse(json["advertiserId"]);
-      }else{
-        advertiserId = json["advertiserId"];
-      }
+      advertiserId = (json["advertiserId"] is core.String) ? core.int.parse(json["advertiserId"]) : json["advertiserId"];
     }
     if (json.containsKey("authorship")) {
       authorship = json["authorship"];
@@ -1576,11 +1474,7 @@ class Link {
       epcSevenDayAverage = new Money.fromJson(json["epcSevenDayAverage"]);
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("imageAltText")) {
       imageAltText = json["imageAltText"];
@@ -1738,10 +1632,7 @@ class LinkSpecialOffers {
       priceCutMin = new Money.fromJson(json["priceCutMin"]);
     }
     if (json.containsKey("promotionCodes")) {
-      promotionCodes = [];
-      json["promotionCodes"].forEach((item) {
-        promotionCodes.add(item);
-      });
+      promotionCodes = json["promotionCodes"].toList();
     }
   }
 
@@ -1771,10 +1662,7 @@ class LinkSpecialOffers {
       output["priceCutMin"] = priceCutMin.toJson();
     }
     if (promotionCodes != null) {
-      output["promotionCodes"] = new core.List();
-      promotionCodes.forEach((item) {
-        output["promotionCodes"].add(item);
-      });
+      output["promotionCodes"] = promotionCodes.toList();
     }
 
     return output;
@@ -1799,10 +1687,7 @@ class Links {
   /** Create new Links from JSON data */
   Links.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Link.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Link.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1817,10 +1702,7 @@ class Links {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1923,11 +1805,7 @@ class Publisher {
       epcSevenDayAverage = new Money.fromJson(json["epcSevenDayAverage"]);
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("item")) {
       item = new Publisher.fromJson(json["item"]);
@@ -1945,10 +1823,7 @@ class Publisher {
       payoutRank = json["payoutRank"];
     }
     if (json.containsKey("sites")) {
-      sites = [];
-      json["sites"].forEach((item) {
-        sites.add(item);
-      });
+      sites = json["sites"].toList();
     }
     if (json.containsKey("status")) {
       status = json["status"];
@@ -1987,10 +1862,7 @@ class Publisher {
       output["payoutRank"] = payoutRank;
     }
     if (sites != null) {
-      output["sites"] = new core.List();
-      sites.forEach((item) {
-        output["sites"].add(item);
-      });
+      output["sites"] = sites.toList();
     }
     if (status != null) {
       output["status"] = status;
@@ -2018,10 +1890,7 @@ class Publishers {
   /** Create new Publishers from JSON data */
   Publishers.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Publisher.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Publisher.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -2036,10 +1905,7 @@ class Publishers {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -2071,8 +1937,14 @@ class Report {
   /** The number of matching rows before paging is applied. */
   core.int matching_row_count;
 
+  /** The rows of data for the report */
+  core.List<core.List<core.Object>> rows;
+
   /** The start of the date range for this report, inclusive. */
   core.String start_date;
+
+  /** The totals rows for the report */
+  core.List<core.List<core.Object>> totals_rows;
 
   /** The report type. */
   core.String type;
@@ -2080,10 +1952,7 @@ class Report {
   /** Create new Report from JSON data */
   Report.fromJson(core.Map json) {
     if (json.containsKey("column_names")) {
-      column_names = [];
-      json["column_names"].forEach((item) {
-        column_names.add(item);
-      });
+      column_names = json["column_names"].toList();
     }
     if (json.containsKey("end_date")) {
       end_date = json["end_date"];
@@ -2092,14 +1961,16 @@ class Report {
       kind = json["kind"];
     }
     if (json.containsKey("matching_row_count")) {
-      if(json["matching_row_count"] is core.String){
-        matching_row_count = core.int.parse(json["matching_row_count"]);
-      }else{
-        matching_row_count = json["matching_row_count"];
-      }
+      matching_row_count = (json["matching_row_count"] is core.String) ? core.int.parse(json["matching_row_count"]) : json["matching_row_count"];
+    }
+    if (json.containsKey("rows")) {
+      rows = json["rows"].map((rowsItem) => rowsItem.toList()).toList();
     }
     if (json.containsKey("start_date")) {
       start_date = json["start_date"];
+    }
+    if (json.containsKey("totals_rows")) {
+      totals_rows = json["totals_rows"].map((totals_rowsItem) => totals_rowsItem.toList()).toList();
     }
     if (json.containsKey("type")) {
       type = json["type"];
@@ -2111,10 +1982,7 @@ class Report {
     var output = new core.Map();
 
     if (column_names != null) {
-      output["column_names"] = new core.List();
-      column_names.forEach((item) {
-        output["column_names"].add(item);
-      });
+      output["column_names"] = column_names.toList();
     }
     if (end_date != null) {
       output["end_date"] = end_date;
@@ -2125,8 +1993,14 @@ class Report {
     if (matching_row_count != null) {
       output["matching_row_count"] = matching_row_count;
     }
+    if (rows != null) {
+      output["rows"] = rows.map((rowsItem) => rowsItem.toList()).toList();
+    }
     if (start_date != null) {
       output["start_date"] = start_date;
+    }
+    if (totals_rows != null) {
+      output["totals_rows"] = totals_rows.map((totals_rowsItem) => totals_rowsItem.toList()).toList();
     }
     if (type != null) {
       output["type"] = type;
@@ -2140,3 +2014,16 @@ class Report {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

@@ -1,14 +1,20 @@
-library gan_v1beta1_api_browser;
+library gan_v1beta1_api.browser;
 
-import "gan_v1beta1_api_client.dart";
-export "gan_v1beta1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:html" as html;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:js/js.dart" as js;
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-part "src/browser/browser_client.dart";
-part "src/browser/gan.dart";
+import 'package:google_gan_v1beta1_api/src/cloud_api_browser.dart';
+import "package:google_gan_v1beta1_api/gan_v1beta1_api_client.dart";
+
+/** Lets you have programmatic access to your Google Affiliate Network data. */
+class Gan extends Client with BrowserClient {
+
+  /** OAuth Scope2: Manage your GAN data */
+  static const String GAN_SCOPE = "https://www.googleapis.com/auth/gan";
+
+  /** OAuth Scope2: View your GAN data */
+  static const String GAN_READONLY_SCOPE = "https://www.googleapis.com/auth/gan.readonly";
+
+  final oauth.OAuth2 auth;
+
+  Gan([oauth.OAuth2 this.auth]);
+}

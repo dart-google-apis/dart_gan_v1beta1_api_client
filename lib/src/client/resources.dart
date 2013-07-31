@@ -1,9 +1,11 @@
-part of gan_v1beta1_api_client;
+part of gan_v1beta1_api;
 
-class AdvertisersResource_ extends Resource {
+class AdvertisersResource_ {
 
-  AdvertisersResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AdvertisersResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves data about a single advertiser if that the requesting advertiser/publisher has access to it. Only publishers can lookup advertisers. Advertisers can request information about themselves by omitting the advertiserId query parameter.
@@ -129,10 +131,12 @@ class AdvertisersResource_ extends Resource {
   }
 }
 
-class CcOffersResource_ extends Resource {
+class CcOffersResource_ {
 
-  CcOffersResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CcOffersResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves credit card offers for the given publisher.
@@ -140,6 +144,7 @@ class CcOffersResource_ extends Resource {
    * [publisher] - The ID of the publisher in question.
    *
    * [advertiser] - The advertiser ID of a card issuer whose offers to include. Optional, may be repeated.
+   *   Repeated values: allowed
    *
    * [projection] - The set of fields to return.
    *   Allowed values:
@@ -148,7 +153,7 @@ class CcOffersResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<CcOffers> list(core.String publisher, {core.String advertiser, core.String projection, core.Map optParams}) {
+  async.Future<CcOffers> list(core.String publisher, {core.List<core.String> advertiser, core.String projection, core.Map optParams}) {
     var url = "publishers/{publisher}/ccOffers";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -180,10 +185,12 @@ class CcOffersResource_ extends Resource {
   }
 }
 
-class EventsResource_ extends Resource {
+class EventsResource_ {
 
-  EventsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  EventsResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves event data for a given advertiser/publisher.
@@ -302,10 +309,12 @@ class EventsResource_ extends Resource {
   }
 }
 
-class LinksResource_ extends Resource {
+class LinksResource_ {
 
-  LinksResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  LinksResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves data about a single link if the requesting advertiser/publisher has access to it. Advertisers can look up their own links. Publishers can look up visible links or links belonging to advertisers they are in a relationship with.
@@ -410,8 +419,10 @@ class LinksResource_ extends Resource {
    * [roleId] - The ID of the requesting advertiser or publisher.
    *
    * [advertiserId] - Limits the resulting links to the ones belonging to the listed advertisers.
+   *   Repeated values: allowed
    *
    * [assetSize] - The size of the given asset.
+   *   Repeated values: allowed
    *
    * [authorship] - The role of the author of the link.
    *   Allowed values:
@@ -434,6 +445,7 @@ class LinksResource_ extends Resource {
    * [pageToken] - The value of 'nextPageToken' from the previous page. Optional.
    *
    * [promotionType] - The promotion type.
+   *   Repeated values: allowed
    *   Allowed values:
    *     coupon - 
    *     free_gift - 
@@ -454,7 +466,7 @@ class LinksResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Links> list(core.String role, core.String roleId, {core.int advertiserId, core.String assetSize, core.String authorship, core.String createDateMax, core.String createDateMin, core.String linkType, core.int maxResults, core.String pageToken, core.String promotionType, core.String relationshipStatus, core.String searchText, core.String startDateMax, core.String startDateMin, core.Map optParams}) {
+  async.Future<Links> list(core.String role, core.String roleId, {core.List<core.int> advertiserId, core.List<core.String> assetSize, core.String authorship, core.String createDateMax, core.String createDateMin, core.String linkType, core.int maxResults, core.String pageToken, core.List<core.String> promotionType, core.String relationshipStatus, core.String searchText, core.String startDateMax, core.String startDateMin, core.Map optParams}) {
     var url = "{role}/{roleId}/links";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -511,10 +523,12 @@ class LinksResource_ extends Resource {
   }
 }
 
-class PublishersResource_ extends Resource {
+class PublishersResource_ {
 
-  PublishersResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  PublishersResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves data about a single advertiser if that the requesting advertiser/publisher has access to it. Only advertisers can look up publishers. Publishers can request information about themselves by omitting the publisherId query parameter.
@@ -640,10 +654,12 @@ class PublishersResource_ extends Resource {
   }
 }
 
-class ReportsResource_ extends Resource {
+class ReportsResource_ {
 
-  ReportsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ReportsResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a report of the specified type.
@@ -660,6 +676,7 @@ class ReportsResource_ extends Resource {
    *     order_delta - The order delta report type.
    *
    * [advertiserId] - The IDs of the advertisers to look up, if applicable.
+   *   Repeated values: allowed
    *
    * [calculateTotals] - Whether or not to calculate totals rows. Optional.
    *
@@ -672,13 +689,16 @@ class ReportsResource_ extends Resource {
    *     transaction - Event type is transaction.
    *
    * [linkId] - Filters to capture one of given link IDs. Optional.
+   *   Repeated values: allowed
    *
    * [maxResults] - Max number of items to return in this page. Optional. Defaults to return all results.
    *   Minimum: 0
    *
    * [orderId] - Filters to capture one of the given order IDs. Optional.
+   *   Repeated values: allowed
    *
    * [publisherId] - The IDs of the publishers to look up, if applicable.
+   *   Repeated values: allowed
    *
    * [startDate] - The start date (inclusive), in RFC 3339 format, for the report data to be returned. Defaults to one day before endDate, if that is given, or yesterday. Optional.
    *
@@ -693,7 +713,7 @@ class ReportsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Report> get(core.String role, core.String roleId, core.String reportType, {core.String advertiserId, core.bool calculateTotals, core.String endDate, core.String eventType, core.String linkId, core.int maxResults, core.String orderId, core.String publisherId, core.String startDate, core.int startIndex, core.String status, core.Map optParams}) {
+  async.Future<Report> get(core.String role, core.String roleId, core.String reportType, {core.List<core.String> advertiserId, core.bool calculateTotals, core.String endDate, core.String eventType, core.List<core.String> linkId, core.int maxResults, core.List<core.String> orderId, core.List<core.String> publisherId, core.String startDate, core.int startIndex, core.String status, core.Map optParams}) {
     var url = "{role}/{roleId}/report/{reportType}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
