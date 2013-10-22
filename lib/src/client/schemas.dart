@@ -205,7 +205,7 @@ class Advertiser {
   }
 
   /** Return String representation of Advertiser */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -251,7 +251,7 @@ class Advertisers {
   }
 
   /** Return String representation of Advertisers */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -838,7 +838,7 @@ class CcOffer {
   }
 
   /** Return String representation of CcOffer */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -875,7 +875,7 @@ class CcOfferBonusRewards {
   }
 
   /** Return String representation of CcOfferBonusRewards */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -930,7 +930,7 @@ class CcOfferDefaultFees {
   }
 
   /** Return String representation of CcOfferDefaultFees */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1003,7 +1003,7 @@ class CcOfferRewards {
   }
 
   /** Return String representation of CcOfferRewards */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1040,7 +1040,7 @@ class CcOffers {
   }
 
   /** Return String representation of CcOffers */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1222,7 +1222,7 @@ class Event {
   }
 
   /** Return String representation of Event */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1322,7 +1322,7 @@ class EventProducts {
   }
 
   /** Return String representation of EventProducts */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1368,7 +1368,7 @@ class Events {
   }
 
   /** Return String representation of Events */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1577,7 +1577,7 @@ class Link {
   }
 
   /** Return String representation of Link */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1669,7 +1669,7 @@ class LinkSpecialOffers {
   }
 
   /** Return String representation of LinkSpecialOffers */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1715,7 +1715,7 @@ class Links {
   }
 
   /** Return String representation of Links */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1753,7 +1753,7 @@ class Money {
   }
 
   /** Return String representation of Money */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1872,7 +1872,7 @@ class Publisher {
   }
 
   /** Return String representation of Publisher */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1918,7 +1918,7 @@ class Publishers {
   }
 
   /** Return String representation of Publishers */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -2010,7 +2010,7 @@ class Report {
   }
 
   /** Return String representation of Report */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
